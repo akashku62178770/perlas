@@ -4,6 +4,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { DOMAINS } from "../../lib/constants";
 import { FadeIn } from "../motion/FadeIn";
 import { SectionLabel } from "../ui/SectionLabel"; 
+import Image from "next/image";
+
+
+const DOMAIN_IMAGES: Record<string, string> = {
+  sky: "/triad-aviation.jpg",
+  // sky: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&q=80",
+  // C-130 military transport on tarmac — exactly right
+  land: "/triad-army.jpg",
+  // land: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+  // Armored military convoy — force mobility
+  sea: "/triad-navy.jpg",
+  // sea: "https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?w=800&q=80",
+  // Patrol vessel at speed on open water
+};
 
 function DomainTab({
   domain,
@@ -180,6 +194,49 @@ function DomainContent({ domain }: { domain: (typeof DOMAINS)[number] }) {
 
       {/* Right — assets + engagement */}
       <div>
+        <motion.div
+          key={domain.key + "-img"}
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            position: "relative",
+            height: 200,
+            borderRadius: 4,
+            overflow: "hidden",
+            marginBottom: "2rem",
+            border: "1px solid var(--color-border)",
+          }}
+        >
+          <Image
+            src={DOMAIN_IMAGES[domain.key]}
+            alt={domain.label}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(8,8,9,0.8) 0%, transparent 60%)",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "1rem",
+              left: "1rem",
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.5625rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "rgba(201,168,76,0.7)",
+            }}
+          >
+            {domain.domain} · {domain.label}
+          </div>
+        </motion.div>
         <div
           style={{
             fontSize: "0.6875rem",

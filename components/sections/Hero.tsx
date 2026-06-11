@@ -197,6 +197,97 @@ function TigerMark() {
   );
 }
 
+// At the top of Hero.tsx — replace TigerMark entirely with this:
+import Image from "next/image";
+
+function HeroImagePanel() {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        right: 0,
+        top: 0,
+        bottom: 0,
+        width: "45%",
+        overflow: "hidden",
+      }}
+      className="hidden xl:block"
+    >
+      {/* Main image */}
+      <motion.div
+        initial={{ scale: 1.08, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        style={{ position: "absolute", inset: 0 }}
+      >
+        <Image
+          src="/svc-strategic.jpg"
+          // src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80"
+          // Naval warship at sea — dramatic, sovereign
+          alt="Naval fleet"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+          priority
+        />
+        {/* Left-to-right gradient so text side stays dark */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, var(--color-obsidian) 0%, rgba(8,8,9,0.6) 40%, transparent 100%)",
+          }}
+        />
+        {/* Bottom darkening */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to top, var(--color-obsidian) 0%, transparent 40%)",
+          }}
+        />
+        {/* Gold tint overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(201,168,76,0.06)",
+            mixBlendMode: "color",
+          }}
+        />
+      </motion.div>
+
+      {/* Floating stat card — bottom left of image panel */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          position: "absolute",
+          bottom: "3rem",
+          left: "2rem",
+          padding: "1.25rem 1.5rem",
+          backgroundColor: "rgba(8,8,9,0.85)",
+          backdropFilter: "blur(12px)",
+          border: "1px solid rgba(201,168,76,0.2)",
+          borderRadius: 4,
+        }}
+      >
+        <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.5625rem", color: "var(--color-gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
+          Asset Readiness
+        </div>
+        <div style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 500, color: "var(--color-white)", lineHeight: 1 }}>
+          AR = MTBF / (MTBF + MTTR<sub style={{ fontSize: "0.6em" }}>local</sub>)
+        </div>
+        <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "var(--color-muted)" }}>
+          Engineered before delivery. Written into contract.
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -232,7 +323,8 @@ export function Hero() {
         }}
       />
 
-      <TigerMark />
+      {/* <TigerMark /> */}
+      <HeroImagePanel />
 
       <motion.div
         style={{

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function CustomCursor() {
+  const [mounted, setMounted] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
   const [isHidden, setIsHidden] = useState(true);
 
@@ -13,6 +14,7 @@ export function CustomCursor() {
   const sy = useSpring(my, { stiffness: 220, damping: 22, mass: 0.5 });
 
   useEffect(() => {
+    setMounted(true);
     const move = (e: MouseEvent) => {
       mx.set(e.clientX);
       my.set(e.clientY);
@@ -41,7 +43,7 @@ export function CustomCursor() {
     };
   }, [mx, my, isHidden]);
 
-  if (typeof window === "undefined") return null;
+  if (!mounted) return null;
 
   return (
     <>

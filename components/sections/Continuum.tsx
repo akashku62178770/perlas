@@ -5,6 +5,7 @@ import { FadeIn } from "../motion/FadeIn";
 import { StaggerChildren, itemVariants } from "../motion/StaggerChildren";
 import { SectionLabel } from "../ui/SectionLabel";
 import { CONTINUUM_PILLARS } from "../../lib/constants";
+import Image from "next/image";
 
 const softPillars = CONTINUUM_PILLARS.filter((p) => p.layer === "soft");
 const hardPillars = CONTINUUM_PILLARS.filter((p) => p.layer === "hard");
@@ -329,6 +330,8 @@ export function Continuum() {
         <FadeIn delay={0.2} direction="up">
           <div
             style={{
+              position: "relative",
+              overflow: "hidden",
               marginTop: "5rem",
               padding: "3rem",
               border: "1px solid var(--color-border)",
@@ -341,6 +344,13 @@ export function Continuum() {
               gap: "2rem",
             }}
           >
+            <Image
+              src="https://images.unsplash.com/photo-1569025743873-ea3a9ade89f9?w=1200&q=80"
+              // Control room / command center — governance, oversight
+              alt="Command and control"
+              fill
+              style={{ objectFit: "cover", objectPosition: "center", opacity: 0.12 }}
+            />
             <div>
               <div
                 style={{

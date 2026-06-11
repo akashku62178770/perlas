@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FadeIn } from "../motion/FadeIn";
 import { TextReveal } from "../motion/TextReveal";
+import Image from "next/image";
 
 const MANIFESTO_LINES = [
   "A frigate that cannot be sustained at home is not a warship.",
@@ -180,6 +181,64 @@ export function Manifesto() {
           </div>
         </div>
       </div>
+
+      <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-10% 0px" }}
+      transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+      style={{
+        position: "relative",
+        height: 320,
+        marginTop: "5rem",
+        borderRadius: 4,
+        overflow: "hidden",
+        border: "1px solid var(--color-border)",
+      }}
+    >
+      <Image
+        src="/engine-bg.jpg"
+        // src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1600&q=80"
+        // Military aircraft in hangar — shows MRO, depot context
+        alt="Aerospace maintenance facility"
+        fill
+        style={{ objectFit: "cover", objectPosition: "center " }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to right, rgba(8,8,9,0.9) 0%, rgba(8,8,9,0.3) 60%, rgba(8,8,9,0.7) 100%)",
+        }}
+      />
+      {/* Overlaid quote */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          padding: "0 4rem",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(1.25rem, 2.5vw, 2rem)",
+            fontWeight: 300,
+            color: "var(--color-white)",
+            maxWidth: 600,
+            lineHeight: 1.4,
+            letterSpacing: "-0.02em",
+          }}
+        >
+          "Perlas takes the opposite position. We hold{" "}
+          <span style={{ color: "var(--color-gold)" }}>Lifecycle Custody</span> of
+          a national capability from the first G2G conversation to the final
+          depot-level overhaul."
+        </p>
+      </div>
+    </motion.div>
     </section>
   );
 }

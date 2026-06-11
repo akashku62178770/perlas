@@ -4,6 +4,22 @@ import { FadeIn } from "../motion/FadeIn";
 import { StaggerChildren, itemVariants } from "../motion/StaggerChildren";
 import { SectionLabel } from "../ui/SectionLabel";
 import { ECONOMICS_SECTORS } from "../../lib/constants";
+import Image from "next/image";
+
+const SECTOR_IMAGES: Record<string, string> = {
+  "Energy & Grid Integration":
+    "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80",
+  // Solar farm from above — scale, sovereign infrastructure
+  "Mining & Resource Extraction":
+    "/mining.jpg",
+  // Open-pit mining aerial — resource wealth
+  "Pharmaceutical Supply Chains":
+    "https://images.unsplash.com/photo-1576671081837-49000212a370?w=600&q=80",
+  // Pharmaceutical lab — clean, traceable
+  "Agriculture & Food Security":
+    "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80",
+  // Aerial agricultural fields — scale
+};
 
 function LCCFormula() {
   const terms = [
@@ -244,6 +260,21 @@ export function Economics() {
                   transition: "background-color 0.3s",
                 }}
               >
+                <div style={{ position: "relative", height: 120, margin: "-2rem -2rem 1.5rem", overflow: "hidden" }}>
+                  <Image
+                    src={SECTOR_IMAGES[sector.title]}
+                    alt={sector.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to bottom, transparent 40%, var(--color-steel) 100%)",
+                    }}
+                  />
+                </div>
                 <div
                   style={{
                     fontFamily: "var(--font-mono)",

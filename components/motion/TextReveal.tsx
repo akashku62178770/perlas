@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
 interface TextRevealProps {
@@ -24,7 +24,7 @@ export function TextReveal({
 
   const words = text.split(" ");
 
-  const container = {
+  const container: Variants = {
     hidden: {},
     show: {
       transition: {
@@ -34,7 +34,7 @@ export function TextReveal({
     },
   };
 
-  const word = {
+  const word: Variants = {
     hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
     show: {
       opacity: 1,

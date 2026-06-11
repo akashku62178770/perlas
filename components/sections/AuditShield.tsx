@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "../motion/FadeIn";
 import { SectionLabel } from "../ui/SectionLabel";
 import { AUDIT_OBJECTIONS } from "../../lib/constants";
+import Image from "next/image";
 
 function BlockchainViz() {
   const blocks = Array.from({ length: 5 }, (_, i) => i);
@@ -287,7 +288,7 @@ export function AuditShield() {
       }}
     >
       {/* Background pattern */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           inset: 0,
@@ -295,7 +296,24 @@ export function AuditShield() {
             "radial-gradient(circle at 90% 10%, rgba(201,168,76,0.04) 0%, transparent 50%)",
           pointerEvents: "none",
         }}
-      />
+      /> */}
+      <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+        <Image
+          // src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80"
+          src="/cap-forensic.jpg"
+          // Server room / data infrastructure — audit, ledger context
+          alt=""
+          fill
+          style={{ objectFit: "cover", opacity: 0.4, filter: "grayscale(100%)" }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "radial-gradient(circle at 90% 10%, rgba(201,168,76,0.04) 0%, transparent 50%)",
+          }}
+        />
+      </div>
 
       <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative" }}>
         {/* Header */}

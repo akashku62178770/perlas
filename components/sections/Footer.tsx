@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FadeIn } from "../motion/FadeIn";
 import { SectionLabel } from "../ui/SectionLabel";
 import { NAV_LINKS } from "../../lib/constants";
+import Image from "next/image";
 
 function TigerMarkFooter() {
   return (
@@ -127,10 +128,22 @@ export function Footer() {
         id="contact"
         style={{
           padding: "8rem 2rem 6rem",
-          backgroundColor: "var(--color-obsidian)",
+          // backgroundColor: "var(--color-obsidian)",
+          
           borderTop: "1px solid var(--color-border)",
         }}
       >
+        <div style={{ position: "relative", inset: "0",  overflow: "hidden", pointerEvents: "none" }}>
+          <Image
+            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=1600&q=80"
+            // src=""
+            // Philippine coastline aerial — homeland, archipelago
+            alt=""
+            fill
+            style={{ objectFit: "cover", opacity: 0.4, filter: "grayscale(60%)" }}
+          />
+          {/* <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(8,8,9,0.85)" }} /> */}
+        </div>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div
             style={{
