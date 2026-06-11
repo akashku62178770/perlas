@@ -1,0 +1,185 @@
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { FadeIn } from "../motion/FadeIn";
+import { TextReveal } from "../motion/TextReveal";
+
+const MANIFESTO_LINES = [
+  "A frigate that cannot be sustained at home is not a warship.",
+  "It is a debt flying a flag.",
+  "A transport aircraft grounded for one component, shipped from one distant depot,",
+  "on one foreign timetable, is not an asset on the national books.",
+  "It is anxiety on the national balance sheet.",
+];
+
+export function Manifesto() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const lineX = useTransform(scrollYProgress, [0.1, 0.5], [-40, 0]);
+  const lineOpacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
+
+  return (
+    <section
+      ref={ref}
+      style={{
+        backgroundColor: "var(--color-obsidian-2)",
+        padding: "8rem 2rem",
+        position: "relative",
+        overflow: "hidden",
+        borderTop: "1px solid var(--color-border)",
+        borderBottom: "1px solid var(--color-border)",
+      }}
+    >
+      {/* Decorative left line */}
+      <motion.div
+        style={{
+          position: "absolute",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: 2,
+          backgroundColor: "var(--color-gold)",
+          scaleY: scrollYProgress,
+          transformOrigin: "top",
+          opacity: 0.6,
+        }}
+      />
+
+      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 2fr",
+            gap: "6rem",
+            alignItems: "start",
+          }}
+          className="flex flex-col xl:grid"
+        >
+          {/* Left — label */}
+          <FadeIn direction="right">
+            <div>
+              <div
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 500,
+                  letterSpacing: "0.16em",
+                  textTransform: "uppercase",
+                  color: "var(--color-gold)",
+                  fontFamily: "var(--font-mono)",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                The White Elephant Problem
+              </div>
+              <p
+                style={{
+                  fontSize: "0.9375rem",
+                  fontWeight: 300,
+                  lineHeight: 1.8,
+                  color: "var(--color-muted)",
+                  maxWidth: 280,
+                }}
+              >
+                The capital platform, bought at great political cost, that
+                degrades into a monument the moment the foreign supply line
+                breaks.
+              </p>
+
+              <div
+                style={{
+                  marginTop: "3rem",
+                  padding: "1.5rem",
+                  border: "1px solid var(--color-border)",
+                  borderLeft: "2px solid var(--color-gold)",
+                  backgroundColor: "rgba(201,168,76,0.03)",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: "0.75rem",
+                    fontFamily: "var(--font-mono)",
+                    color: "var(--color-gold)",
+                    marginBottom: "0.75rem",
+                    letterSpacing: "0.08em",
+                  }}
+                >
+                  PERLAS POSITION
+                </div>
+                <p
+                  style={{
+                    fontSize: "0.875rem",
+                    lineHeight: 1.7,
+                    color: "var(--color-dim)",
+                  }}
+                >
+                  Not a softer dependency. Not a friendlier vendor.{" "}
+                  <span style={{ color: "var(--color-light)", fontWeight: 500 }}>
+                    Sovereignty
+                  </span>
+                  —the unconditional ability of a state to keep its own
+                  fleets ready on terms it sets for itself.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Right — manifesto lines */}
+          <div>
+            {MANIFESTO_LINES.map((line, i) => (
+              <FadeIn key={i} delay={i * 0.12} direction="up" distance={20}>
+                <p
+                  style={{
+                    fontSize: i < 2 ? "1.75rem" : "1.125rem",
+                    fontFamily: "var(--font-display)",
+                    fontWeight: i < 2 ? 300 : 300,
+                    lineHeight: 1.4,
+                    color: i < 2 ? "var(--color-white)" : "var(--color-dim)",
+                    marginBottom: i === 1 ? "2.5rem" : "0.75rem",
+                    borderBottom: i === 1 ? "1px solid var(--color-border)" : "none",
+                    paddingBottom: i === 1 ? "2.5rem" : 0,
+                  }}
+                >
+                  {line}
+                </p>
+              </FadeIn>
+            ))}
+
+            <FadeIn delay={0.8} direction="up">
+              <div
+                style={{
+                  marginTop: "3rem",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1.5rem",
+                }}
+              >
+                <div
+                  style={{
+                    width: 48,
+                    height: 1,
+                    backgroundColor: "var(--color-gold)",
+                  }}
+                />
+                <span
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "1.5rem",
+                    fontWeight: 500,
+                    color: "var(--color-gold)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  Perlas exists to end that condition.
+                </span>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
