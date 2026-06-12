@@ -22,7 +22,7 @@ export const DOMAINS = [
       "Depot-level in-country MRO",
       "Blockchain-tracked spares pipeline",
     ],
-    outcome: "Unconditional air mobility on the nation's schedule.",
+    outcome: "Unconditional air mobility on the nation's schedule — delivered by moving the depot inside your borders, not by promising a faster foreign one.",
     accentColor: "#c9a84c",
   },
   {
@@ -40,7 +40,7 @@ export const DOMAINS = [
       "Localized spares & overhaul pipeline",
       "Sanctions-clean logistics chain",
     ],
-    outcome: "A land force that moves on its own logistics, indefinitely.",
+    outcome: "A land force that moves on its own logistics, indefinitely — because the overhaul facility is built where the fleet operates, not where the OEM is headquartered.",
     accentColor: "#7a8a6a",
   },
   {
@@ -59,7 +59,7 @@ export const DOMAINS = [
       "Tactical UAV surveillance integration",
       "Domestic shipyard JV lifecycle",
     ],
-    outcome: "Persistent maritime presence across every boundary and choke point.",
+    outcome: "Persistent maritime presence across every boundary and choke point — secured through a domestic shipyard JV, so 'in for repair' never means 'out of the EEZ.",
     accentColor: "#4a7c9e",
   },
 ] as const;
@@ -69,19 +69,19 @@ export const CONTINUUM_PILLARS = [
     layer: "soft",
     title: "Transaction Governance",
     description:
-      "Forensic accounting, sovereign contract economics, and a tamper-proof blockchain ledger your auditors read directly.",
+      "Every peso of the program is signed onto a ledger your comptroller can read the day it's spent — so the Audit Observation Memorandum that freezes other programs never reaches your desk.",
   },
   {
     layer: "soft",
     title: "Cyber-Defense Architecture",
     description:
-      "Nation-state-grade protection for fleet telemetry, grid control systems, and supply chain data under NIST and ISO 27001.",
+      "Your fleet's telemetry and your grid's control systems are hardened against intrusion before the first sensor goes live and not patched after a breach makes headlines.",
   },
   {
     layer: "soft",
     title: "Regulatory Compliance",
     description:
-      "Section 53(g) RA 9184 IRR, RA 12024 SRDP offset pre-structuring, and COA Circular No. 2009-001 audit trail architecture.",
+      "Offset obligations under RA 12024 and audit requirements under COA Circular 2009-001 are written into the contract structure itself, compliant on the day you sign, not negotiated after.",
   },
   {
     layer: "hard",

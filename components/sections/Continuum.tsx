@@ -201,6 +201,7 @@ export function Continuum() {
                 <span style={{ color: "var(--color-dim)" }}>
                   One accountable record.
                 </span>
+                {/* Perlas holds both at once — which means the engineer who designs your sustainment plan and the auditor who signs off on it report to the same principal. No seam for the blame to fall through. */}
               </h2>
             </FadeIn>
 
@@ -214,9 +215,10 @@ export function Continuum() {
                   fontWeight: 300,
                 }}
               >
-                Most firms occupy one layer. Strategy houses stop at the edge
-                of the document. Defense primes stop when the warranty expires.
-                Perlas holds both at once.
+                This is the layer that protects the signer. 
+                Every pillar below exists because someone in 
+                your position has to defend this decision in a hearing
+                 room, years from now.
               </p>
             </FadeIn>
           </div>

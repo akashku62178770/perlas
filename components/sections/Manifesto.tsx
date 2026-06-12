@@ -74,7 +74,7 @@ export function Manifesto() {
                   marginBottom: "1.5rem",
                 }}
               >
-                The White Elephant Problem
+                Neutralizing the White Elephant
               </div>
               <p
                 style={{
@@ -108,7 +108,7 @@ export function Manifesto() {
                     letterSpacing: "0.08em",
                   }}
                 >
-                  PERLAS POSITION
+                  THE PERLAS MECHANISM
                 </div>
                 <p
                   style={{
@@ -117,12 +117,17 @@ export function Manifesto() {
                     color: "var(--color-dim)",
                   }}
                 >
-                  Not a softer dependency. Not a friendlier vendor.{" "}
+                  We move the depot, not the dependency. 
+                  Maintenance, repair, and overhaul is re-sited inside your own 
+                  economic zone — your engineers, your toolchains, your spares inventory. 
+                  The asset stops waiting on a foreign queue because the queue no longer exists. 
+                  We've engineered the failure point out of the supply chain before the contract is signed.
+                  {/* Not a softer dependency. Not a friendlier vendor.{" "}
                   <span style={{ color: "var(--color-light)", fontWeight: 500 }}>
                     Sovereignty
                   </span>
                   —the unconditional ability of a state to keep its own
-                  fleets ready on terms it sets for itself.
+                  fleets ready on terms it sets for itself. */}
                 </p>
               </div>
             </div>
@@ -175,6 +180,9 @@ export function Manifesto() {
                   }}
                 >
                   Perlas exists to end that condition.
+                  Here is how: localized custody, modeled economics, 
+                  and an audit trail that exists before your auditors 
+                  ask for it. Three structures. One signature.
                 </span>
               </div>
             </FadeIn>

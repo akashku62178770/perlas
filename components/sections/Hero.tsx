@@ -259,7 +259,7 @@ function HeroImagePanel() {
       </motion.div>
 
       {/* Floating stat card — bottom left of image panel */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -283,7 +283,7 @@ function HeroImagePanel() {
         <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "var(--color-muted)" }}>
           Engineered before delivery. Written into contract.
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
@@ -403,7 +403,7 @@ export function Hero() {
           >
             From the first government-to-government conversation to the final
             depot-level overhaul. One principal. One accountable record.
-            Building nations that can keep what they buy.
+            Building nations that can keep what they buy. We model the cost of keeping it before you sign for buying it.
           </p>
         </FadeIn>
 

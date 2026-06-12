@@ -343,7 +343,7 @@ export function AuditShield() {
                   marginTop: "2rem",
                 }}
               >
-                The program that clears your audit board is the program structured to clear it from day one.
+                We pre-clear your audit board before your committee ever sits down.
               </h2>
             </FadeIn>
           </div>
@@ -363,6 +363,7 @@ export function AuditShield() {
                 legislature, and an anti-corruption body. The downside of a
                 procurement scandal is career-ending. The upside of a marginally
                 better deal is nothing by comparison.
+                
               </p>
 
               <div
@@ -428,7 +429,7 @@ export function AuditShield() {
         </FadeIn>
 
         {/* Objections */}
-        <div
+        {/* <div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -444,7 +445,7 @@ export function AuditShield() {
               />
             </FadeIn>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
