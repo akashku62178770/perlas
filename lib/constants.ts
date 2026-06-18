@@ -68,36 +68,42 @@ export const CONTINUUM_PILLARS = [
   {
     layer: "soft",
     title: "Transaction Governance",
+    image: "/continuum/transaction.jpg",
     description:
       "Every peso of the program is signed onto a ledger your comptroller can read the day it's spent — so the Audit Observation Memorandum that freezes other programs never reaches your desk.",
   },
   {
     layer: "soft",
     title: "Cyber-Defense Architecture",
+    image: "https://images.pexels.com/photos/5483248/pexels-photo-5483248.jpeg",
     description:
       "Your fleet's telemetry and your grid's control systems are hardened against intrusion before the first sensor goes live and not patched after a breach makes headlines.",
   },
   {
     layer: "soft",
     title: "Regulatory Compliance",
+    image: "/continuum/compliance.jpg",
     description:
       "Offset obligations under RA 12024 and audit requirements under COA Circular 2009-001 are written into the contract structure itself, compliant on the day you sign, not negotiated after.",
   },
   {
     layer: "hard",
     title: "Aerospace MRO",
+    image: "/continuum/mro.jpg",
     description:
       "In-country depot-level maintenance for fixed-wing transport, rotary, and unmanned platforms. Your engineers, your toolchains.",
   },
   {
     layer: "hard",
     title: "Naval Vessel Programs",
+    image: "https://images.pexels.com/photos/8798474/pexels-photo-8798474.jpeg",
     description:
       "Fleet acquisition and domestic shipyard joint ventures delivering continuous maritime presence under PPP availability contracts.",
   },
   {
     layer: "hard",
     title: "Land Mobility & Surveillance",
+    image: "https://images.pexels.com/photos/36500514/pexels-photo-36500514.jpeg",
     description:
       "Terrain-matched armor fleets, surveillance and radar integration, sustained by a localized overhaul infrastructure.",
   },
@@ -162,3 +168,55 @@ export const ECONOMICS_SECTORS = [
       "Advanced agriculture programs and palm oil networks as Sovereign Industrial Assets—governed through transaction analytics and positioned within countertrade frameworks.",
   },
 ];
+
+
+export const SECTORS_OF_EXPERTISE = [
+  {
+    key: "aerospace",
+    title: "Aerospace",
+    tag: "Sky",
+    description: "Fixed-wing, helicopters, UAVs & in-country MRO",
+    image:
+      "/aerospace.jpg",
+  },
+  {
+    key: "marine",
+    title: "Marine",
+    tag: "Sea",
+    description: "Naval & Coast Guard fleet programmes",
+    image:
+      "/marine.jpg",
+  },
+  {
+    key: "weapon-systems",
+    title: "Weapon Systems",
+    tag: "Defense",
+    description: "Remote-control weapon stations & integration",
+    image:
+      "/weapon.jpg",
+  },
+  {
+    key: "land-mobility",
+    title: "Land Mobility",
+    tag: "Land",
+    description: "Vehicles & armoured mobility, terrain-matched",
+    image:
+      "/triad-army.jpg",
+  },
+  {
+    key: "surveillance",
+    title: "Surveillance",
+    tag: "Network",
+    description: "Radar, electro-optics & secure communications",
+    image:
+      "/radar.jpg",
+  },
+  {
+    key: "other-markets",
+    title: "Other Markets",
+    tag: "Economic",
+    description: "Energy, mining, rail & sovereign infrastructure",
+    image:
+      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80",
+  },
+]   

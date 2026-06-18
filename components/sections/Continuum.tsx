@@ -12,81 +12,118 @@ const hardPillars = CONTINUUM_PILLARS.filter((p) => p.layer === "hard");
 
 function PillarCard({
   title,
+  image,
   description,
   index,
   layer,
 }: {
   title: string;
+  image: string;
   description: string;
   index: number;
   layer: "soft" | "hard";
 }) {
   const accentColor =
     layer === "soft" ? "rgba(201,168,76,0.5)" : "rgba(74,124,158,0.5)";
-  const accentBg =
-    layer === "soft" ? "rgba(201,168,76,0.04)" : "rgba(74,124,158,0.04)";
+  const accentLine = layer === "soft" ? "var(--color-gold)" : "#4a7c9e";
 
   return (
     <motion.div
       variants={itemVariants}
       whileHover={{ y: -4, borderColor: accentColor }}
       style={{
-        padding: "1.5rem",
-        border: "1px solid var(--color-border)",
+        position: "relative",
+        overflow: "hidden",
         borderRadius: 4,
+        border: "1px solid var(--color-border)",
         backgroundColor: "var(--color-steel)",
         cursor: "none",
         transition: "border-color 0.3s, transform 0.3s",
-        position: "relative",
-        overflow: "hidden",
       }}
     >
-      {/* Number */}
-      <div
-        style={{
-          position: "absolute",
-          top: "1rem",
-          right: "1rem",
-          fontFamily: "var(--font-mono)",
-          fontSize: "0.625rem",
-          color: "var(--color-muted)",
-          letterSpacing: "0.08em",
-        }}
-      >
-        {String(index + 1).padStart(2, "0")}
+      {/* Image header strip */}
+      <div style={{ position: "relative", height: 180, width: "100%" }}>
+        <img
+          src={image}
+          alt={title}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+        {/* Fade into card body */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, rgba(22,22,26,0.1) 0%, var(--color-steel) 100%)",
+          }}
+        />
+        {/* Tint overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor:
+              layer === "soft" ? "rgba(201,168,76,0.1)" : "rgba(74,124,158,0.1)",
+            mixBlendMode: "multiply",
+          }}
+        />
       </div>
 
-      <div
-        style={{
-          width: 28,
-          height: 1,
-          backgroundColor: layer === "soft" ? "var(--color-gold)" : "#4a7c9e",
-          marginBottom: "1rem",
-        }}
-      />
+      {/* Body */}
+      <div style={{ padding: "1.5rem", position: "relative" }}>
+        {/* Number */}
+        <div
+          style={{
+            position: "absolute",
+            top: "1rem",
+            right: "1.5rem",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.625rem",
+            color: "var(--color-muted)",
+            letterSpacing: "0.08em",
+          }}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </div>
 
-      <h4
-        style={{
-          fontFamily: "var(--font-display)",
-          fontSize: "0.9375rem",
-          fontWeight: 500,
-          color: "var(--color-white)",
-          marginBottom: "0.75rem",
-          letterSpacing: "-0.01em",
-        }}
-      >
-        {title}
-      </h4>
-      <p
-        style={{
-          fontSize: "0.8125rem",
-          lineHeight: 1.7,
-          color: "var(--color-muted)",
-          fontWeight: 300,
-        }}
-      >
-        {description}
-      </p>
+        <div
+          style={{
+            width: 28,
+            height: 1,
+            backgroundColor: accentLine,
+            marginBottom: "1rem",
+          }}
+        />
+
+        <h4
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "0.9375rem",
+            fontWeight: 500,
+            color: "var(--color-white)",
+            marginBottom: "0.75rem",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          {title}
+        </h4>
+        <p
+          style={{
+            fontSize: "0.8125rem",
+            lineHeight: 1.7,
+            color: "var(--color-muted)",
+            fontWeight: 300,
+          }}
+        >
+          {description}
+        </p>
+      </div>
     </motion.div>
   );
 }

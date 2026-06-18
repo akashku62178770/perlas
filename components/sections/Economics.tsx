@@ -325,7 +325,7 @@ export function Economics() {
         >
           <FadeIn direction="right">
             <div>
-              <div
+              {/* <div
                 style={{
                   fontFamily: "var(--font-mono)",
                   fontSize: "0.6875rem",
@@ -364,9 +364,9 @@ export function Economics() {
                 model uses your own operational data to demonstrate a lower total
                 burden under localized sustainment, even when acquisition price
                 is identical to a foreign offer.
-              </p>
+              </p> */}
 
-              <motion.a
+              {/* <motion.a
                 href="#contact"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
@@ -387,7 +387,7 @@ export function Economics() {
                 }}
               >
                 Request an LCC Model
-              </motion.a>
+              </motion.a> */}
             </div>
           </FadeIn>
 

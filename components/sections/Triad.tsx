@@ -8,7 +8,7 @@ import Image from "next/image";
 
 
 const DOMAIN_IMAGES: Record<string, string> = {
-  sky: "/triad-aviation.jpg",
+  sky: "/triad-aviation.jpg", 
   // sky: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=800&q=80",
   // C-130 military transport on tarmac — exactly right
   land: "/triad-army.jpg",

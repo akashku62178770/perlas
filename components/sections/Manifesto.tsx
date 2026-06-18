@@ -74,7 +74,8 @@ export function Manifesto() {
                   marginBottom: "1.5rem",
                 }}
               >
-                Neutralizing the White Elephant
+                {/* Neutralizing the White Elephant */}
+                Transforming Liabilities into Revenue
               </div>
               <p
                 style={{

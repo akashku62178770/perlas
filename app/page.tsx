@@ -12,6 +12,7 @@ import { Economics } from "../components/sections/Economics";
 import { Footer } from "../components/sections/Footer";
 import { Hero } from "../components/sections/Hero";
 import { Manifesto } from "../components/sections/Manifesto";
+import { SectorsOfExpertise } from "../components/sections/SectorsofExpertise";
 import { Triad } from "../components/sections/Triad";
 
 export default function Home() {
@@ -21,8 +22,9 @@ export default function Home() {
       <Manifesto />
       <Continuum />
       <Triad />
-      <Economics />
-      <AuditShield />
+      <SectorsOfExpertise />
+      {/* <Economics /> */}
+      {/* <AuditShield /> */}
       <Footer />
     </main>
   );
